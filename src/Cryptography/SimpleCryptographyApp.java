@@ -1,5 +1,20 @@
 package Cryptography;
 
+/**
+ * κωδικοποιησε τον 1ο χαρακτηρα του μηνυματος με την ακεραια τιμη που
+ * αντιστοιχει  σε αυτον (ASCII) κωδικοποιησε τους επομενους χαρακτηρες
+ * προσθετοντας την ακεραια ASCII τιμη του καθενα απο αυτους με τον
+ * κωδικο του προηγουμενου του.
+ *
+ * υποθετουμε πως τα μηνυματα τελειωνουν με τον χαρακτηρα #
+ *
+ * θελουμε το κωδικοποιημενο μηνυμα να ειναι ακολουθια ακεραιων που τελειωνει
+ * με -1
+ *
+ * Γραψε και τον αλγοριθμο αποκρυπτογραφησης που λαμβανει ως εισοδο μια
+ * ακολουθια ακεραιων που τελειωνει με -1 και υπολογιζει το αρχικο μηνυμα
+ */
+
 import java.util.Scanner;
 
 public class SimpleCryptographyApp {
@@ -44,14 +59,12 @@ public class SimpleCryptographyApp {
 
         public static String decryptFirst(int[] arr){
             StringBuilder sb = new StringBuilder();
-            int sum = 0;
 
-            for (int i = 0 ; i < arr.length ; i++){
+            sb.append((char) arr[0]);
+            for (int i = 1 ; i < arr.length ; i++){
                 if(arr[i] == - 1) sb.append('#');
                 else{
-                    sb.append((char) (arr[i] - sum));
-                    sum += arr[i];
-                    System.out.println(sum);
+                    sb.append((char) (arr[i] - arr[i-1]));
                 }
             }
             return sb.toString();
