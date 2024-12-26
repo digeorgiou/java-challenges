@@ -38,7 +38,13 @@ public class Main {
     d.makeSound();
     dob.makeSound();
     kd.makeSound();
-
+        System.out.println("---------------");
+    Scripts s = new Scripts();
+    s.makeDoubleSound(c);
+    s.makeDoubleSound(hc);
+    s.makeDoubleSound(d);
+    s.makeDoubleSound(dob);
+    s.makeDoubleSound(kd);
     }
 
 

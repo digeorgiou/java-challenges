@@ -32,11 +32,13 @@ public class Playlist {
         return this.videos[j];
     }
 
-    public void print() {
-        System.out.println("Playlist " + title + " contains: ");
+    public String toString() {
+        String s= "";
+        s += "Playlist " + title + " contains: \n";
         for (int i = 0 ; i < videoNumber ; i++){
-            System.out.println(this.videos[i]);
+            s += this.videos[i] + "\n";
         }
+        return s;
     }
 
 

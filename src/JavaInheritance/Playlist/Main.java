@@ -38,9 +38,9 @@ public class Main {
         howToMakeCookies.addNewVideo("Video 02");
         howToMakeCookies.addNewVideo("Video 03");
 
-        punk.print();
+        System.out.println(punk);
 
-        howToMakeCookies.print();
+        System.out.println(howToMakeCookies);
 
         System.out.println("Punk recommends : " + punk.recommendation());
         System.out.println("Cookies recommend: " + howToMakeCookies.recommendation());

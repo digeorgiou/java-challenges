@@ -16,19 +16,30 @@ package FindNextHigherNumber;
 
 public class FindNextHigherNumber {
     public static void main(String[] args) {
-//
-//        System.out.println(nextHigher(129));
-//        System.out.println(nextHigher(127));
-//        System.out.println(nextHigher(1));
-//        System.out.println(nextHigher(323423));
+
+        System.out.println(nextHigher(1022));
+
 
     }
 
 
-//public static int nextHigher(int n) {
-//    String binary = decimalToBinary(n);
-//    for ()
-//}
+public static int nextHigher(int n) {
+    String binary = "0"+Integer.toBinaryString(n);
+    int ones = 0;
+    int zeros = 0;
+    for (int i = binary.length()-1; i >= 1; i--){
+        if(binary.charAt(i) == 49 && binary.charAt(i-1) == 48){
+            binary = binary.substring(0, i-1) + "10";
+            break;
+        } else if(binary.charAt(i) == 49) {
+            ones++;
+            binary = binary.substring(0, i);
+        } else zeros++;
+    }
+
+    return Integer.parseInt(binary+"0".repeat(zeros)+"1".repeat(ones), 2);
+
+}
 
     public static String decimalToBinary(int decimal) {
         StringBuilder binary = new StringBuilder();
@@ -48,11 +59,4 @@ public class FindNextHigherNumber {
         return binary.toString();
     }
 
-    public static int countOnes(String s1){
-        int count = 0;
-        for(int i = 0 ; i < s1.length() ; i ++){
-            if(s1.charAt(i)=='1') count += 1;
-        }
-        return count;
-    }
 }
