@@ -3,6 +3,11 @@ package JavaInheritance.Food;
 
 public class Snack extends Food{
 
+
+    public Snack() {
+
+    }
+
     public Snack(String name, double calories) {
         super(name,calories);
     }

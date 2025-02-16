@@ -1,10 +1,18 @@
 package JavaInheritance.Food;
 
+import javax.naming.directory.SchemaViolationException;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Food[] dinner = new Food[5];
+
+        Scanner sc = new Scanner(System.in);
+
+        TropicalFruit t = new TropicalFruit();
+        t.read(sc);
 
 
         dinner[0] = new Snack("sn1", 150);

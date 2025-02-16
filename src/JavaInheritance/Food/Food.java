@@ -1,9 +1,16 @@
 package JavaInheritance.Food;
 
 
+import java.util.Scanner;
+
 abstract class Food implements StandardMethods, DoubleAdjustments{
     private String name;
     private double calories;
+
+
+    public Food(){
+
+    }
 
     public Food(String name, double calories) {
         this.name = name;
@@ -32,6 +39,25 @@ abstract class Food implements StandardMethods, DoubleAdjustments{
                 "name='" + name + '\'' +
                 ", calories=" + calories +
                 '}';
+    }
+
+    public void read(Scanner sc) {
+        System.out.println("Give food name: ");
+        this.name = sc.nextLine();
+
+        while(true){
+            System.out.println("Give calories: ");
+            if(sc.hasNextDouble()){
+                this.calories = sc.nextDouble();
+                break;
+            }
+            else{
+                System.out.println("Only doubles please.");
+                sc.next();
+            }
+        }
+        sc.nextLine(); //το βαζω γιατι αλλιως μενει ενα /n που δεν το
+        // καταναλωνει η nextDouble
     }
 
     @Override

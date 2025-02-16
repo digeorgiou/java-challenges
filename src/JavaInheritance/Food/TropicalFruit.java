@@ -1,9 +1,14 @@
 package JavaInheritance.Food;
 
 
+import java.util.Scanner;
+
 public class TropicalFruit extends Food{
     private String type;
 
+    public TropicalFruit(){
+
+    }
     public TropicalFruit(String name, double calories, String type) {
         super(name, calories);
         this.type = type;
@@ -25,6 +30,13 @@ public class TropicalFruit extends Food{
     public String toString() {
         return "TropicalFruit: " +
                 "type= '" + type + '\'' + super.toString();
+    }
+
+    @Override
+    public void read(Scanner sc){
+        super.read(sc);
+        System.out.println("Give type: ");
+        this.type = sc.nextLine();
     }
 
     @Override
