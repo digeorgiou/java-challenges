@@ -53,7 +53,7 @@ public class Main {
 
         for(Character ch : charactersCount.keySet()){
             double percent = charactersCount.get(ch)*100.00/sum;
-            percent = Math.round(percent * 10000.0)/10000.0;
+            percent = Math.round(percent * 100.0)/100.0;
             characterPercent.put(ch, percent);
         }
 

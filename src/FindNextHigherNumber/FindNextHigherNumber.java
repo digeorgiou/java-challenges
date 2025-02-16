@@ -18,8 +18,6 @@ public class FindNextHigherNumber {
     public static void main(String[] args) {
 
         System.out.println(nextHigher(1022));
-
-
     }
 
 
